@@ -26,9 +26,9 @@ MEDIA_ROOT = BASE_DIR / "media"
 SECRET_KEY = "django-insecure-mg#d6ynl8v6rc9r+x$)3*$gngf7_)wmz(54#&!ut4j_2acan@4"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["https://portifolio-wyxv.onrender.com", "localhost"]
 
 
 # Application definition
