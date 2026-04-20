@@ -1,0 +1,57 @@
+{% extends 'core/base.html' %} 
+
+{% block title %} Início - Meu Portifólio {% endblock %} 
+
+{% block extra_css %}
+<style>
+  /* Estilos locais da secao se necessário */
+</style>
+{% endblock %} {% block content %}
+<div class="secao card">
+  <h3>Sobre Mim</h3>
+  <p style="font-size: 1.1rem; color: #555; line-height: 1.8">
+    {{dados.descricao}}
+  </p>
+</div>
+
+<div class="secao card">
+  <h3>Dados Pessoais</h3>
+  <ul class="info-list">
+    <li class="info-item">
+      <span class="info-label">Nome: </span>
+      <span class="info-value">{{dados.nome}}</span>
+    </li>
+    <li class="info-item">
+      <span class="info-label">Idade: </span>
+      <span class="info-value">{{dados.idade}}</span>
+    </li>
+    <li class="info-item">
+      <span class="info-label">Curso: </span>
+      <span class="info-value">{{dados.curso}}</span>
+    </li>
+    <li class="info-item">
+      <span class="info-label">Período: </span>
+      <span class="info-value">{{dados.periodo}}</span>
+    </li>
+  </ul>
+</div>
+
+<div class="secao card">
+  <h3>Cursos e Certificados</h3>
+  <ul class="info-list">
+    <li class="info-item">
+      <span class="info-label">Python 3: </span>
+      <span class="info-value">Curso em Vídeo</span>
+    </li>
+    <li class="info-item">
+      <span class="info-label">Imersão IA: </span>
+      <span class="info-value">Alura</span>
+    </li>
+    <li class="info-item">
+      <span class="info-label">Imersão Dev: </span>
+      <span class="info-value">Alura</span>
+    </li>
+  </ul>
+</div>
+
+{% endblock %}
