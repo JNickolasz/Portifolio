@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/6.0/ref/settings/
 """
 
+from decouple import Csv
 from pathlib import Path
 from decouple import config
 import os
@@ -27,9 +28,15 @@ MEDIA_ROOT = BASE_DIR / "media"
 SECRET_KEY = "django-insecure-mg#d6ynl8v6rc9r+x$)3*$gngf7_)wmz(54#&!ut4j_2acan@4"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
 
-ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', '').split(',')
+DEBUG = config('DJANGO_DEBUG', default=False, cast=bool)
+
+# Quando subir pra fazer deply tem q lembrar de mudar pra 'False'.
+
+ALLOWED_HOSTS = config('ALLOWED_HOSTS', default='127.0.0.1,localhost', cast=Csv())
+
+if not ALLOWED_HOSTS:
+    ALLOWED_HOSTS = ["127.0.0.1", "localhost"]
 
 
 # Application definition

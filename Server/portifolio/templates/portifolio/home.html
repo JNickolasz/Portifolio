@@ -4,7 +4,7 @@
 
 {% block extra_css %}
 <style>
-  /* Estilos locais da secao se necessário */
+  
 </style>
 {% endblock %} {% block content %}
 <div class="secao card">
@@ -38,20 +38,14 @@
 
 <div class="secao card">
   <h3>Cursos e Certificados</h3>
-  <ul class="info-list">
-    <li class="info-item">
-      <span class="info-label">Python 3: </span>
-      <span class="info-value">Curso em Vídeo</span>
-    </li>
-    <li class="info-item">
-      <span class="info-label">Imersão IA: </span>
-      <span class="info-value">Alura</span>
-    </li>
-    <li class="info-item">
-      <span class="info-label">Imersão Dev: </span>
-      <span class="info-value">Alura</span>
-    </li>
-  </ul>
+  {% for curso in cursos %}
+  <div class="info-item">
+    <span class="info-label">{{curso.titulo}}:</span>
+    <span class="info-value">{{curso.instituicao}}</span>
+  </div>
+  {% empty %}
+  <p>Nenhum curso foi cadastrado ainda.</p>
+  {% endfor %}
 </div>
 
 {% endblock %}

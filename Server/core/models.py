@@ -18,6 +18,8 @@ class DadosPessoais(models.Model):
     def __str__(self):
         return self.nome
 
+# Fiquei em dúvida se podia fazer os modelos todos aqui, ent por via das dúvidas decidi fazer aqui
+
 class Projeto(models.Model): 
     titulo = models.CharField(max_length=100)
     descricao = models.TextField()
@@ -28,3 +30,14 @@ class Projeto(models.Model):
 
     def __str__(self):
         return self.titulo
+
+class Certificado(models.Model): 
+    nome_curso = models.CharField(max_length=100)
+    empresa = models.CharField(max_length=50)
+    duracao = models.CharField(max_length=50)
+    descricao = models.TextField(null=True, blank=True)
+    link_certificado = models.URLField(null=True, blank=True)
+
+    def __str__(self):
+        return self.nome_curso
+    
