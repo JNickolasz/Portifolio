@@ -4,8 +4,8 @@ from django.db import models
 
 class DadosPessoais(models.Model): 
     nome = models.CharField(max_length=100)
-    nome_social = models.CharField(max_length=50, default='José Nickolas')
-    idade = models.IntegerField(default=20)
+    nome_social = models.CharField(max_length=50)
+    idade = models.IntegerField(max_length=3)
     descricao = models.TextField()
     curso = models.CharField(max_length=50)
     periodo = models.CharField(max_length=20)
