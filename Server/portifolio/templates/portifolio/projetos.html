@@ -73,7 +73,7 @@
           <li><strong>Descrição: </strong>{{projeto.descricao}}</li>
           <li><strong>Tecnologias: </strong>{{projeto.tecnologias}}</li>
           <li><strong>Status: </strong>{{projeto.status}}</li>
-          <li><strong><a href="{{projeto.link}}">Ver Projeto -></a></strong></li>
+          <li><strong>Link do Projeto: </strong><a href="{{projeto.link}}" style="text-decoration: none; color: var(--accent-color);" target="_blank">{{projeto.link}}</a></li>
         </ul>
         <img src="{{projeto.imagem.url}}" alt="imagem-projeto" style="width: 100%; max-height: 400px; object-fit: cover; border-radius: 12px; margin-top: 1rem;">
       </div>
