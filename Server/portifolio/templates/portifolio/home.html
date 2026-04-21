@@ -40,8 +40,11 @@
   <h3>Cursos e Certificados</h3>
   {% for curso in cursos %}
   <div class="info-item">
-    <span class="info-label">{{curso.titulo}}:</span>
-    <span class="info-value">{{curso.instituicao}}</span>
+    <span class="info-label">{{curso.nome_curso}}:</span>
+    <span class="info-value">{{curso.empresa}}</span>
+    <span class="info-value">{{curso.descricao}}</span>
+    <span class="info-value">{{curso.duracao}}</span>
+    <span class="info-value"><a href="{{curso.link_certificado}}" target="_blank">{{curso.link_certificado}}</a></span>
   </div>
   {% empty %}
   <p>Nenhum curso foi cadastrado ainda.</p>
