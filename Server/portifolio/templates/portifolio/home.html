@@ -48,6 +48,27 @@
     color: var(--accent-color);
     margin-right: 0.5rem;
   }
+  .tecnologias-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.tech-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+    color: #555;
+}
+
+.tech-item img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+}
 </style>
 {% endblock %}
 
@@ -61,11 +82,16 @@
 
 <div class="secao card">
   <h3>Tecnologias</h3>
-  {% for tecnologia in tecnologias %}
-  <img src="{{tecnologia.icone_url}}" alt="{{tecnologia.nome}}">
-  {% empty %}
-  <p>Nenhuma tecnologia foi cadastrada ainda.</p>
-  {% endfor %}
+  <div class="tecnologias-grid">
+    {% for tecnologia in tecnologias %}
+    <div class="tech-item">
+      <img src="{{tecnologia.icone_url}}" alt="{{tecnologia.nome}}" width="50" height="50">
+      <span>{{tecnologia.nome}}</span>
+    </div>
+    {% empty %}
+    <p>Nenhuma tecnologia foi cadastrada ainda.</p>
+    {% endfor %}
+  </div>
 </div>
 
 <div class="secao card">
