@@ -53,8 +53,8 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "core",
     "portifolio",
-    "cloudinary",
     "cloudinary_storage",
+    "cloudinary",
 ]
 
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
