@@ -2,14 +2,15 @@ from django.contrib import messages
 from django.core.mail import send_mail
 from portifolio.forms import ContatoForm
 from django.shortcuts import render, redirect
-from core.models import DadosPessoais, Projeto, Certificado
+from core.models import DadosPessoais, Projeto, Certificado, Tecnologia
 
 # Create your views here.
 
 def home(request):
     dados = DadosPessoais.objects.first()
     certificados = Certificado.objects.all()
-    return render(request, "portifolio/home.html", {'dados': dados, 'certificados': certificados})
+    tecnologias = Tecnologia.objects.all()
+    return render(request, "portifolio/home.html", {'dados': dados, 'certificados': certificados, "tecnologias": tecnologias})
 
 
 def projetos(request):

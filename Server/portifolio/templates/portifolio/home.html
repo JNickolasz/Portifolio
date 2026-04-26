@@ -60,6 +60,15 @@
 </div>
 
 <div class="secao card">
+  <h3>Tecnologias</h3>
+  {% for tecnologia in tecnologias %}
+  <img src="{{tecnologia.icone_url}}" alt="{{tecnologia.nome}}">
+  {% empty %}
+  <p>Nenhuma tecnologia foi cadastrada ainda.</p>
+  {% endfor %}
+</div>
+
+<div class="secao card">
   <h3>Dados Pessoais</h3>
   <ul class="info-list">
     <li class="info-item">
