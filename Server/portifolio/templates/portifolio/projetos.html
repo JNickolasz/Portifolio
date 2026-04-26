@@ -10,11 +10,11 @@
     gap: 2rem;
   }
   .project-card {
-    background: white;
+    background: rgba(30, 41, 59, 0.8);
     padding: 2rem;
     border-radius: 20px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
-    border: 1px solid rgba(0, 0, 0, 0.05);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(124, 58, 237, 0.15);
     transition: all 0.3s ease;
     display: flex;
     flex-direction: column;
@@ -22,8 +22,8 @@
   }
   .project-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 15px 35px rgba(52, 152, 219, 0.15);
-    border-color: rgba(52, 152, 219, 0.2);
+    box-shadow: 0 15px 35px rgba(124, 58, 237, 0.3);
+    border-color: rgba(124, 58, 237, 0.35);
   }
   .project-card h3 {
     color: var(--primary-color);
@@ -37,8 +37,8 @@
   }
   .project-info li {
     padding: 0.8rem 0;
-    border-bottom: 1px solid #f0f0f0;
-    color: #555;
+    border-bottom: 1px solid rgba(124, 58, 237, 0.15);
+    color: #94a3b8;
     font-size: 0.95rem;
   }
   .project-info li:last-child {
@@ -73,7 +73,7 @@
           <li><strong>Descrição: </strong>{{projeto.descricao}}</li>
           <li><strong>Tecnologias: </strong>{{projeto.tecnologias}}</li>
           <li><strong>Status: </strong>{{projeto.status}}</li>
-          <li><strong>Link do Projeto: </strong><a href="{{projeto.link}}" style="text-decoration: none; color: var(--accent-color);" target="_blank">{{projeto.link}}</a></li>
+          <li><strong>Link do Projeto: </strong><a href="{{projeto.link}}" style="text-decoration: none; color: var(--accent-color);" target="_blank">Ver Projeto</a></li>
         </ul>
       </div>
     {% empty %}

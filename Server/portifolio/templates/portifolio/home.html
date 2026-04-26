@@ -10,11 +10,11 @@
     gap: 2rem;
   }
   .cert-card {
-    background: white;
+    background: rgba(30, 41, 59, 0.8);
     padding: 2rem;
     border-radius: 20px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
-    border: 1px solid rgba(0, 0, 0, 0.05);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(124, 58, 237, 0.15);
     transition: all 0.3s ease;
     display: flex;
     flex-direction: column;
@@ -22,8 +22,8 @@
   }
   .cert-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 15px 35px rgba(52, 152, 219, 0.15);
-    border-color: rgba(52, 152, 219, 0.2);
+    box-shadow: 0 15px 35px rgba(124, 58, 237, 0.3);
+    border-color: rgba(124, 58, 237, 0.35);
   }
   .cert-card h4 {
     color: var(--primary-color);
@@ -37,8 +37,8 @@
   }
   .cert-info li {
     padding: 0.8rem 0;
-    border-bottom: 1px solid #f0f0f0;
-    color: #555;
+    border-bottom: 1px solid rgba(124, 58, 237, 0.15);
+    color: #94a3b8;
     font-size: 0.95rem;
   }
   .cert-info li:last-child {
@@ -55,10 +55,35 @@
     margin-top: 1rem;
     justify-content: space-between;
   }
+  .tech-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.4rem;
+    cursor: default;
+    transition: transform 0.25s ease;
+  }
+  .tech-item:hover {
+    transform: scale(1.2);
+  }
   .tech-item img {
     width: 70px;
     height: 70px;
     object-fit: contain;
+    display: block;
+  }
+  .tech-item .tech-name {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #a78bfa;
+    opacity: 0;
+    transform: translateY(4px);
+    transition: opacity 0.25s ease, transform 0.25s ease;
+    white-space: nowrap;
+  }
+  .tech-item:hover .tech-name {
+    opacity: 1;
+    transform: translateY(0);
   }
 </style>
 {% endblock %}
@@ -66,7 +91,7 @@
 {% block content %}
 <div class="secao card">
   <h3>Sobre Mim</h3>
-  <p style="font-size: 1.1rem; color: #555; line-height: 1.8">
+  <p style="font-size: 1.1rem; color: #94a3b8; line-height: 1.8">
     {{dados.descricao}}
   </p>
 </div>
@@ -77,6 +102,7 @@
     {% for tecnologia in tecnologias %}
     <div class="tech-item">
       <img src="{{tecnologia.icone_url}}" alt="{{tecnologia.nome}}" width="50" height="50">
+      <span class="tech-name">{{tecnologia.nome}}</span>
     </div>
     {% empty %}
     <p>Nenhuma tecnologia foi cadastrada ainda.</p>
