@@ -80,19 +80,19 @@
   
   <ul class="info-list">
     <li class="info-item">
-      <span class="info-label">E-mail: </span>
+      <span class="info-label"><i class="fa-solid fa-envelope"></i> E-mail: </span>
       <span class="info-value">{{dados.email}}</span>
     </li>
     <li class="info-item">
-      <span class="info-label">Telefone: </span>
+      <span class="info-label"><i class="fa-solid fa-phone"></i> Telefone: </span>
       <span class="info-value">{{dados.telefone}}</span>
     </li>
     <li class="info-item">
-      <span class="info-label">LinkedIn: </span>
+      <span class="info-label"><i class="fa-brands fa-linkedin"></i> LinkedIn: </span>
       <a href="{{dados.linkedin}}" class="info-value">{{dados.linkedin}}</a>
     </li>
     <li class="info-item">
-      <span class="info-label">GitHub: </span>
+      <span class="info-label"><i class="fa-brands fa-github"></i> GitHub: </span>
       <a href="{{dados.github}}" class="info-value">{{dados.github}}</a>
     </li>
   </ul>
@@ -100,7 +100,8 @@
 
 <div class="secao card">
   <h3>
-    Envie um e-mail
+    Pronto para iniciar um projeto?
+    <br><p style="font-weight: 400; font-size: 1.4rem;">Envie um e-mail</p>
   </h3>
   <form action="" method="post" class="contato-form">
     {% csrf_token %}
