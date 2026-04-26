@@ -57,8 +57,6 @@ INSTALLED_APPS = [
     "cloudinary",
 ]
 
-DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
-
 CLOUDINARY_STORAGE = {
     'CLOUD_NAME' : config('CLOUDINARY_CLOUD_NAME'),
     'API_KEY' : config('CLOUDINARY_API_KEY'),
@@ -148,7 +146,18 @@ STATIC_ROOT = BASE_DIR / "staticfiles"
 MEDIA_ROOT = BASE_DIR / "media"
 WHITENOISE_ROOT = MEDIA_ROOT
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+# STORAGE CONFIG
+
+STORAGES = {
+    # vai armazenar os arquivos da midia enviados pelo usuário (fotos,videos, etc)
+    "default": {
+        "BACKEND": "cloudinary_storage.storage.MediaCloudinaryStorage",
+    },
+    # vai armazenar os arquivos estáticos do projeto (CSS,JS, layouts, etc...)
+    "staticfiles": {
+        "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
+    }
+}
 
 # SEND EMAIL CONFIG
 
